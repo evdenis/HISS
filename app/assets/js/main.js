@@ -18,8 +18,8 @@ import Buzz from '@web3/buzz'
 
 var Buffer = require('buffer/').Buffer
 
-const buzz = new Buzz({ provider: 'http://swarm.hissbb.com' });
-//const buzz = new Buzz({ provider: 'http://swarm-gateways.net' });
+//const buzz = new Buzz({ provider: 'http://swarm.hissbb.com' });
+const buzz = new Buzz({ provider: 'http://swarm-gateways.net' });
 
 //const swarm = require("swarm-js").at("http://swarm.hissbb.com");
 
@@ -114,7 +114,7 @@ import HissContractDesc from '../../../build/contracts/Hiss.json';
 						var encryptedNote = crypt.encrypt($('#note').val());
 
 						buzz.upload(encryptedNote).then((hash) => {
-							let url = `http://swarm.hissbb.com/bzz-raw:/${hash}`
+							let url = `http://swarm-gateways.net/bzz-raw:/${hash}`
 							console.log(`Url --> ${url}`)
 							document.getElementById("DoctorSwarmUrlNote").innerHTML = url
 							document.getElementById("DoctorSwarmUrlNote").href = url
@@ -147,7 +147,7 @@ import HissContractDesc from '../../../build/contracts/Hiss.json';
 							//const buf = Buffer.from(reader.result) // Convert data into buffer
 							console.log(encryptedNote);
 							buzz.upload(encryptedNote).then((hash) => {
-								let url = `http://swarm.hissbb.com/bzz-raw:/${hash}`
+								let url = `http://swarm-gateways.net/bzz-raw:/${hash}`
 								console.log(`Url --> ${url}`)
 								document.getElementById("DoctorSwarmUrlFile").innerHTML = url
 								document.getElementById("DoctorSwarmUrlFile").href = url
@@ -226,7 +226,7 @@ import HissContractDesc from '../../../build/contracts/Hiss.json';
 				console.log(encryptedFirstNote);
 
 				buzz.upload(encryptedFirstNote).then((hash) => {
-					let url = `http://swarm.hissbb.com/bzz-raw:/${hash}`
+					let url = `http://swarm-gateways.net/bzz-raw:/${hash}`
 					console.log(`Url --> ${url}`)
 					document.getElementById("InsuranceSwarmUrlNote").innerHTML = url
 					document.getElementById("InsuranceSwarmUrlNote").href = url
